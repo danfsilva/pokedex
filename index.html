@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="CSS\style.css">
+    <link rel="icon" type="image/png" sizes="16x16"  href="Favicons/favicon.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+  <body>
+    <div class="background">
+      <div class="pokeball-container">
+        <div class="pokeball pokeball1"></div>
+        <div class="pokeball pokeball2"></div>
+        <div class="pokeball pokeball3"></div>
+        <div class="pokeball pokeball4"></div>
+      </div>
+  
+      <div class="cloud-container">
+        <div class="cloud cloud1"></div>
+        <div class="cloud cloud2"></div>
+        <div class="cloud cloud3"></div>
+        <div class="cloud cloud4"></div>
+        <div class="cloud cloud5"></div>
+        <div class="cloud cloud6"></div>
+      </div>
+    </div>
+    
+    <main>
+      <div class="container">
+        <audio id="myAudio" src="Audio/8bit-pokemon.mp3" loop></audio>
+        <button class="soundButton" onclick="toggleSound()">On/Off</button>
+        <button class="increaseButton" onclick="increaseVolume()">+</button>
+        <button class="decreaseButton" onclick="decreaseVolume()">-</button>
+
+        <div class="blueCircle"></div>
+        <div class="redCircle"></div>
+        <div class="yellowCircle"></div>
+        <div class="greenCircle"></div>
+
+        <div class="nextButtonLight"></div>
+        <div class="prevButtonLight" id="prevButtonLight"></div>
+        
+        <img src="Images/pokedex.png" alt="console" class="console">
+
+        <div class="description">
+          <div class="textTruncate">
+            <span class="pokemonNumber" id="pokemonNumber"></span>
+            -
+            <span class="pokemonName" id="pokemonName"></span>
+          </div>
+        </div>
+
+        <button class="prevButton" id="prevButton">
+          <span>
+            &lt; Prev 
+          </span>
+        </button>
+        
+        <button class="nextButton" id="nextButton">
+          <span>
+            Next &gt;
+          </span>
+        </button>
+
+        <input class="search-box" type="text" id="pokemonInput" placeholder="Name or Number" onkeydown="handleKeyDown(event)">
+        <div>
+          <img class="pokemonImage" id="pokemonImage" src="" alt="Pokemon">
+        </div>
+      </div>
+
+      <script src="JS/app.js"></script>
+    </main>
+  </body>
+</html>

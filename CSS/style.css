@@ -1,0 +1,570 @@
+@import url(https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700;800&display=swap);
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Oxanium', cursive;
+  }
+  
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to bottom, #1E90FF, #87CEEB, #cae5f0);
+  z-index: -1;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  position: relative;
+  display: inline-block;
+}
+
+.console {
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+  padding: 5%;
+}
+
+.description {
+  position: absolute;
+  top: 55%;
+  right: 28%;
+  font-size: clamp(8px, 6vw, 1.3rem);
+  font-weight: 600;
+  width: 200px;
+  text-align: right;
+}
+
+.textTruncate {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.textTruncate.full {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
+}
+
+.pokemonNumber {
+  color: rgb(129, 129, 129); 
+}
+
+.pokemonName {
+  color: #2b2b2b;
+  text-transform: capitalize;
+}
+
+.soundButton {
+  position: absolute;
+  top: 13%;
+  margin: 0 65%;
+  transform: translateY(-50%);
+  background-color: #203038;
+  border-radius: 4px;
+  border: 1px solid #000000; /* Adiciona uma borda de 1px com cor #ccc */
+  box-shadow: -3px 4px 1px rgba(0, 0, 0, 1.3); /* Adiciona uma sombra */
+  color: #ffffff;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: clamp(4px, 2.5vw, 0.5rem);
+}
+
+.soundButton:active {
+  background-color: #000000;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.increaseButton {
+  position: absolute;
+  top: 18%;
+  margin: 0 70%;
+  transform: translateY(-50%);
+  background-color: #203038;
+  border-radius: 4px;
+  border: 1px solid #000000; /* Adiciona uma borda de 1px com cor #ccc */
+  box-shadow: -3px 4px 1px rgba(0, 0, 0, 1.3); /* Adiciona uma sombra */
+  color: #ffffff;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: clamp(4px, 2.5vw, 0.5rem);
+}
+
+.increaseButton:active {
+  background-color: #000000;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.decreaseButton {
+  position: absolute;
+  top: 18%;
+  margin: 0 65%;
+  transform: translateY(-50%);
+  background-color: #203038;
+  border-radius: 4px;
+  border: 1px solid #000000; /* Adiciona uma borda de 1px com cor #ccc */
+  box-shadow: -3px 4px 1px rgba(0, 0, 0, 1.3); /* Adiciona uma sombra */
+  color: #ffffff;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: clamp(4px, 2.5vw, 0.5rem);
+}
+
+.decreaseButton:active {
+  background-color: #000000;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+
+.prevButton,
+.nextButton {
+  position: absolute;
+  top: 85%;
+  margin: 0 6%;
+  transform: translateY(-50%);
+  background-color: #203038;
+  border-radius: 4px;
+  border: 1px solid #000000; /* Adiciona uma borda de 1px com cor #ccc */
+  box-shadow: -3px 4px 1px rgba(0, 0, 0, 1.3); /* Adiciona uma sombra */
+  color: #ffffff;
+  padding: 10px 35px;
+  cursor: pointer;
+}
+
+.prevButton {
+  font-size: clamp(8px, 5vw, 1rem);
+  width: 25%;
+  padding: 2%;
+  left: 13%;
+  transition: box-shadow 0.2s;
+}
+
+.prevButton:active {
+  background-color: #000000;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.nextButton {
+  font-size: clamp(8px, 5vw, 1rem);
+  width: 25%;
+  padding: 2%;
+  right: 20%;
+  transition: box-shadow 0.2s;
+}
+
+.nextButton:active {
+  background-color: #000000;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.search-box {
+  position: absolute;
+  top: 69%;
+  margin: 0 6%;
+  transform: translateY(-50%);
+  background-color: #ffffff;
+  border-radius: 4px;
+  border: 1px solid #000000; /* Adiciona uma borda de 1px com cor #ccc */
+  box-shadow: -3px 4px 1px rgba(255, 255, 255, 0.5), -4px 5px 1px black; /* Adiciona sombra branca */
+  padding: 10px 35px;
+  font-size: clamp(8px, 5vw, 1rem);
+  cursor: pointer;
+  width: 60%;
+  padding: 1%;
+  left: 10%;
+}
+
+.search-box input[type="text"] {
+  border: none;
+  background-color: transparent;
+  padding: 2px;
+  width: 200px;
+  outline: none;
+}
+
+.pokemonImage {
+  position: absolute;
+  top: 39%;
+  margin: 0 34%;
+  width: 22%;
+  height: auto;
+  transform: translateY(-50%);
+}
+
+ .redCircle {
+  position: absolute;
+  top: 4.8%;
+  left: 29.9%;
+  width: 5%;
+  padding-top: 5%;
+  border-radius: 50%;
+
+  animation: piscar-vermelho 1.2s infinite alternate;
+}
+
+/* Animação de piscar */
+@keyframes piscar-vermelho {
+  0% {
+    background-color: #ff0000;
+  }
+  50% {
+    background-color: #D30A40; 
+  }
+  100% {
+    background-color: #ff0000; 
+  }
+}
+
+.yellowCircle {
+  position: absolute;
+  top: 4.8%;
+  left: 36.9%;
+  width: 5%;
+  padding-top: 5%;
+  border-radius: 50%;
+
+  animation: on-yellow 1.5s infinite alternate;
+}
+
+/* Animação de piscar */
+@keyframes on-yellow {
+  0% {
+    background-color: #8A9A3A;
+  }
+  50% {
+    background-color: #D30A40;
+  }
+  100% {
+    background-color: #8A9A3A; 
+  }
+}
+
+.greenCircle {
+  position: absolute;
+  top: 4.8%;
+  left: 43.9%;
+  width: 5%;
+  padding-top: 5%;
+  border-radius: 50%;
+
+  animation: on-green 0.5s infinite alternate;
+}
+
+/* Animação de piscar */
+@keyframes on-green {
+  0% {
+    background-color: #62B033;
+  }
+  50% {
+    background-color: #D30A40;
+  }
+  100% {
+    background-color: #62B033;
+  }
+}
+
+.blueCircle {
+  position: absolute;
+  top: 5.1%;
+  left: 13.4%;
+  width: 15%;
+  padding-top: 15%;
+  border-radius: 50%;
+  background-color: rgba(14, 189, 210, 0.5); /* Cor de fundo com transparência */
+
+  animation: on-blue 2.5s infinite alternate;
+}
+
+/* Animação de piscar */
+@keyframes on-blue {
+  20% {
+    background-color: rgba(14, 189, 210, 0.5);
+  }
+  40% {
+    background-color: rgba(171, 241, 249, 0.5);
+  }
+  70% {
+    background-color: rgba(14, 189, 210, 0.5);
+  }
+}
+
+.prevButtonLight {
+  position: absolute;
+  top: 25%;
+  left: 41.4%;
+  width: 2.3%;
+  padding-top: 2.3%;
+  border-radius: 50%;
+  background-color:  #141313; /* Cor de fundo com transparência */
+}
+
+.prevButtonLight.lit {
+  background-color: #ff0000;
+}
+
+.nextButtonLight {
+  position: absolute;
+  top: 25%;
+  left: 48.1%;
+  width: 2.3%;
+  padding-top: 2.3%;
+  border-radius: 50%;
+  background-color:  #141313; /* Cor de fundo com transparência */
+}
+
+.nextButtonLight.lit {
+  background-color: #ff0000;
+}
+
+.cloud-container {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+  width: 100%;
+  height: calc(100% - 5%);
+}
+
+.cloud {
+  width: 150px;
+  height: 50px;
+  background-color: #ffffff;
+  border-radius: 80px;
+  position: absolute;
+  transform: translateX(-50%);
+  animation: cloudMove 15s linear infinite;
+}
+
+.cloud::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  width: 40px;
+  height: 35px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 50px 0 0 20px rgb(255, 255, 255);
+}
+
+.cloud1 {
+  top: 10%;
+  left: -550px;
+  animation: cloudMove1 55s linear infinite;
+}
+
+.cloud2 {
+  top: 22%;
+  left: -150px;
+  animation: cloudMove2 22s linear infinite;
+}
+
+.cloud3 {
+  top: 37%;
+  left: -200px;
+  animation: cloudMove3 70s linear infinite;
+}
+
+.cloud4 {
+  top: 62%;
+  left: -300px;
+  animation: cloudMove2 32s linear infinite;
+}
+
+.cloud5 {
+  top: 77%;
+  left: -200px;
+  animation: cloudMove2 45s linear infinite;
+}
+
+.cloud6 {
+  top: 90%;
+  left: -250px;
+  animation: cloudMove6 20s linear infinite;
+}
+
+@keyframes cloudMove1 {
+  0% {
+    left: -550px;
+  }
+  100% {
+    left: calc(100% + 550px);
+  }
+}
+
+@keyframes cloudMove2 {
+  0% {
+    left: -150px;
+  }
+  100% {
+    left: calc(100% + 150px);
+  }
+}
+
+@keyframes cloudMove3 {
+  0% {
+    left: -200px;
+  }
+  100% {
+    left: calc(100% + 200px);
+  }
+}
+
+@keyframes cloudMove4 {
+  0% {
+    left: -300px;
+  }
+  100% {
+    left: calc(100% + 300px);
+  }
+}
+
+@keyframes cloudMove5 {
+  0% {
+    left: -200px;
+  }
+  100% {
+    left: calc(100% + 200px);
+  }
+}
+
+@keyframes cloudMove6 {
+  0% {
+    left: -200px;
+  }
+  100% {
+    left: calc(100% + 200px);
+  }
+}
+
+.pokeball-container {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.pokeball {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 2px solid #999999;
+  overflow: hidden;
+}
+
+.pokeball::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 2px;
+  background-color: #999999;
+}
+
+
+.pokeball::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 7px;
+  height: 7px;
+  background-color: #ffffff;
+  border: 2px solid #999999;
+  border-radius: 50%;
+}
+
+.pokeball::before,
+.pokeball::after {
+  z-index: 1;
+}
+
+.pokeball1 {
+  animation: pokeballAnimation1 10s infinite;
+}
+
+@keyframes pokeballAnimation1 {
+  0% {
+    transform: translateX(-200px) translateY(-100px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(calc(100% + 100px)) translateY(calc(100% + 400px));
+    opacity: 0;
+  }
+}
+
+.pokeball2 {
+  animation: pokeballAnimation2 7s infinite;
+}
+
+@keyframes pokeballAnimation2 {
+  0% {
+    transform: translateX(300px) translateY(-100px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(calc(100% + 300px)) translateY(calc(100% + 100px));
+    opacity: 0;
+  }
+}
+
+.pokeball3 {
+  animation: pokeballAnimation3 7s infinite;
+}
+
+@keyframes pokeballAnimation3 {
+  0% {
+    transform: translateX(1300px) translateY(-100px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(calc(100% + 1200px)) translateY(calc(100% + 200px));
+    opacity: 0;
+  }
+}
+
+.pokeball4 {
+  animation: pokeballAnimation4 12s infinite;
+}
+
+@keyframes pokeballAnimation4 {
+  0% {
+    transform: translateX(900px) translateY(-100px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(calc(100% + 900px)) translateY(calc(100% + 350px));
+    opacity: 0;
+  }
+}
