@@ -16,3 +16,4 @@ O projeto desenvolvido pode ser executado após o download e a execução do [in
 
 ## 🚀 Resultado final do projeto
 
+![Preview](Preview/pokedex-preview.gif)
